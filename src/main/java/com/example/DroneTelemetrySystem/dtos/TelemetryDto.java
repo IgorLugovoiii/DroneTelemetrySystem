@@ -9,4 +9,6 @@ public class TelemetryDto {
     private double altitude;
     private double speed;
     private double gpsAccuracy;
+    private Long droneId;
+    private double altitudeChange;
 }

@@ -19,6 +19,8 @@ public class Telemetry {
     private double longitude;
     @Column(name = "altitude")
     private double altitude;
+    @Column(name = "altitude_change")
+    private double altitudeChange;
     @Column(name = "speed")
     private double speed;
     @Column(name = "local_date_time")
@@ -27,4 +29,7 @@ public class Telemetry {
     private double totalDistance;
     @Column(name = "total_distance_haversine")
     private double totalDistanceHaversine;
+    @ManyToOne
+    @JoinColumn(name = "drone_id", nullable = false)
+    private Drone drone;
 }
