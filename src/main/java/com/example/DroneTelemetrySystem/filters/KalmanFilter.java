@@ -1,8 +1,5 @@
 package com.example.DroneTelemetrySystem.filters;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class KalmanFilter {
     private double x;  // Оцінене значення (координата)
     private double p = Math.random();  // Початкова невизначеність(Похибка оцінки)

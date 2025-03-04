@@ -22,6 +22,7 @@ public class DistanceCalculator {
 
         return R * c; // Відстань в кілометрах
     }
+
     public double calculateDirectDistance(Telemetry previousTelemetry, TelemetryDto dto) {
         double lat1 = previousTelemetry.getLatitude();
         double lon1 = previousTelemetry.getLongitude();

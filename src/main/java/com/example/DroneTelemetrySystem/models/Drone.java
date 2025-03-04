@@ -1,11 +1,13 @@
 package com.example.DroneTelemetrySystem.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name = "drone")
+@Data
 public class Drone {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

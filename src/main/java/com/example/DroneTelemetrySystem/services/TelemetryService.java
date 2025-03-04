@@ -9,6 +9,7 @@ import com.example.DroneTelemetrySystem.repositories.DroneRepository;
 import com.example.DroneTelemetrySystem.repositories.TelemetryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -32,6 +33,7 @@ public class TelemetryService {
         this.lonFilter = new KalmanFilter(0);
     }
 
+    @Transactional
     public Telemetry processWithKalmanFilter(TelemetryDto dto) {
         Drone drone = droneRepository.findById(dto.getDroneId())
                 .orElseThrow(() -> new RuntimeException("Drone not found"));
@@ -42,6 +44,7 @@ public class TelemetryService {
         return createTelemetry(dto, drone, filteredLat, filteredLon, 0.0, 0.0, 0.0);
     }
 
+    @Transactional
     public Telemetry processWithHaversine(TelemetryDto dto) {
         Drone drone = droneRepository.findById(dto.getDroneId())
                 .orElseThrow(() -> new RuntimeException("Drone not found"));
@@ -73,6 +76,7 @@ public class TelemetryService {
         return createTelemetry(dto, drone, filteredLat, filteredLon, totalDistance, totalDistanceHaversine, altitudeChange);
     }
 
+    @Transactional
     public Telemetry processWithKalmanAndHaversine(TelemetryDto dto) {
         Drone drone = droneRepository.findById(dto.getDroneId())
                 .orElseThrow(() -> new RuntimeException("Drone not found"));
@@ -97,6 +101,7 @@ public class TelemetryService {
 
         return createTelemetry(dto, drone, filteredLat, filteredLon, totalDistance, 0.0, altitudeChange);
     }
+
 
     private Telemetry createTelemetry(TelemetryDto dto, Drone drone, double latitude, double longitude, double totalDistance,
                                       double totalDistanceHaversine, double altitudeChange) {
@@ -123,10 +128,12 @@ public class TelemetryService {
         return filter.update(measurement, speed, gpsAccuracy);
     }
 
+    @Transactional(readOnly = true)
     public List<Telemetry> getLastTelemetry(Long droneId) {
         return telemetryRepository.findTop50ByDroneIdOrderByLocalDateTimeDesc(droneId);
     }
 
+    @Transactional(readOnly = true)
     public List<Telemetry> getTelemetryHistory(Long droneId, LocalDateTime start, LocalDateTime end) {
         return telemetryRepository.findByDroneIdAndLocalDateTimeBetweenOrderByLocalDateTimeAsc(droneId, start, end);
     }

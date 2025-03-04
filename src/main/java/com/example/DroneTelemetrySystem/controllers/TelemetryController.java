@@ -27,13 +27,13 @@ public class TelemetryController {
         return new ResponseEntity<>(telemetry, HttpStatus.CREATED);
     }
 
-    @PostMapping("haversine")
+    @PostMapping("/haversine")
     public ResponseEntity<Telemetry> processWithHaversine(@RequestBody TelemetryDto telemetryDto) {
         Telemetry telemetry = telemetryService.processWithHaversine(telemetryDto);
         return new ResponseEntity<>(telemetry, HttpStatus.CREATED);
     }
 
-    @PostMapping("haversine-kalman")
+    @PostMapping("/haversine-kalman")
     public ResponseEntity<Telemetry> processWithHaversineKalman(@RequestBody TelemetryDto telemetryDto) {
         Telemetry telemetry = telemetryService.processWithKalmanAndHaversine(telemetryDto);
         return new ResponseEntity<>(telemetry, HttpStatus.CREATED);
