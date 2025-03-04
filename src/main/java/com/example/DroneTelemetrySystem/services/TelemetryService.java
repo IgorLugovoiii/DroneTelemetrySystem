@@ -17,8 +17,6 @@ import java.util.List;
 @Service
 public class TelemetryService {
 
-    private final KalmanFilter latFilter;
-    private final KalmanFilter lonFilter;
     private final TelemetryRepository telemetryRepository;
     private final DistanceCalculator distanceCalculator;
     private final DroneRepository droneRepository;
@@ -29,8 +27,6 @@ public class TelemetryService {
         this.telemetryRepository = telemetryRepository;
         this.distanceCalculator = distanceCalculator;
         this.droneRepository = droneRepository;
-        this.latFilter = new KalmanFilter(0);
-        this.lonFilter = new KalmanFilter(0);
     }
 
     @Transactional
@@ -38,10 +34,32 @@ public class TelemetryService {
         Drone drone = droneRepository.findById(dto.getDroneId())
                 .orElseThrow(() -> new RuntimeException("Drone not found"));
 
-        double filteredLat = applyKalmanFilter(dto.getLatitude(), dto.getSpeed(), dto.getGpsAccuracy(), latFilter);
-        double filteredLon = applyKalmanFilter(dto.getLongitude(), dto.getSpeed(), dto.getGpsAccuracy(), lonFilter);
+        List<Telemetry> lastTelemetry = telemetryRepository.findTop1ByDroneIdOrderByLocalDateTimeDesc(dto.getDroneId());
+        double lastLatitude = lastTelemetry.isEmpty() ? dto.getLatitude() : lastTelemetry.getFirst().getLatitude();
+        double lastLongitude = lastTelemetry.isEmpty() ? dto.getLongitude() : lastTelemetry.getFirst().getLongitude();
 
-        return createTelemetry(dto, drone, filteredLat, filteredLon, 0.0, 0.0, 0.0);
+        KalmanFilter latFilter = new KalmanFilter(lastLatitude);
+        KalmanFilter lonFilter = new KalmanFilter(lastLongitude);
+
+        double filteredLat = latFilter.update(dto.getLatitude(), dto.getSpeed(), dto.getGpsAccuracy());
+        double filteredLon = lonFilter.update(dto.getLongitude(), dto.getSpeed(), dto.getGpsAccuracy());
+
+        double totalDistance = 0.0;
+        double altitudeChange = 0.0;
+
+        if (!lastTelemetry.isEmpty()) {
+            Telemetry previousTelemetry = lastTelemetry.getFirst();
+            totalDistance = previousTelemetry.getTotalDistance();
+
+            double distance = distanceCalculator.calculateHaversineDistance(
+                    previousTelemetry.getLatitude(), previousTelemetry.getLongitude(),
+                    filteredLat, filteredLon);
+
+            totalDistance += distance;
+            altitudeChange = dto.getAltitude() - previousTelemetry.getAltitude();
+        }
+
+        return createTelemetry(dto, drone, filteredLat, filteredLon, totalDistance, 0.0, altitudeChange);
     }
 
     @Transactional
@@ -54,8 +72,8 @@ public class TelemetryService {
         double filteredLon = dto.getLongitude();
 
         List<Telemetry> lastTelemetry = telemetryRepository.findTop1ByDroneIdOrderByLocalDateTimeDesc(dto.getDroneId());
-        double totalDistance = 0.0;  // Звичайна відстань (без фільтрації)
-        double totalDistanceHaversine = 0.0;  // Відстань за формулою Гаверсина
+        double totalDistance = 0.0;
+        double totalDistanceHaversine = 0.0;
 
         if (!lastTelemetry.isEmpty()) {
             Telemetry previousTelemetry = lastTelemetry.getFirst();
@@ -80,12 +98,19 @@ public class TelemetryService {
     public Telemetry processWithKalmanAndHaversine(TelemetryDto dto) {
         Drone drone = droneRepository.findById(dto.getDroneId())
                 .orElseThrow(() -> new RuntimeException("Drone not found"));
-        double altitudeChange = 0.0;
-        double filteredLat = applyKalmanFilter(dto.getLatitude(), dto.getSpeed(), dto.getGpsAccuracy(), latFilter);
-        double filteredLon = applyKalmanFilter(dto.getLongitude(), dto.getSpeed(), dto.getGpsAccuracy(), lonFilter);
 
         List<Telemetry> lastTelemetry = telemetryRepository.findTop1ByDroneIdOrderByLocalDateTimeDesc(dto.getDroneId());
+        double lastLatitude = lastTelemetry.isEmpty() ? dto.getLatitude() : lastTelemetry.getFirst().getLatitude();
+        double lastLongitude = lastTelemetry.isEmpty() ? dto.getLongitude() : lastTelemetry.getFirst().getLongitude();
+
+        KalmanFilter latFilter = new KalmanFilter(lastLatitude);
+        KalmanFilter lonFilter = new KalmanFilter(lastLongitude);
+
+        double filteredLat = latFilter.update(dto.getLatitude(), dto.getSpeed(), dto.getGpsAccuracy());
+        double filteredLon = lonFilter.update(dto.getLongitude(), dto.getSpeed(), dto.getGpsAccuracy());
+
         double totalDistance = 0.0;
+        double altitudeChange = 0.0;
 
         if (!lastTelemetry.isEmpty()) {
             Telemetry previousTelemetry = lastTelemetry.getFirst();
@@ -102,7 +127,6 @@ public class TelemetryService {
         return createTelemetry(dto, drone, filteredLat, filteredLon, totalDistance, 0.0, altitudeChange);
     }
 
-
     private Telemetry createTelemetry(TelemetryDto dto, Drone drone, double latitude, double longitude, double totalDistance,
                                       double totalDistanceHaversine, double altitudeChange) {
         Telemetry telemetry = new Telemetry();
@@ -113,19 +137,10 @@ public class TelemetryService {
         telemetry.setSpeed(dto.getSpeed());
         telemetry.setLocalDateTime(LocalDateTime.now());
         telemetry.setAltitudeChange(altitudeChange);
-
-        if (totalDistance == 0.0) {
-            totalDistance = 0.0;
-        }
-
         telemetry.setTotalDistance(totalDistance);
         telemetry.setTotalDistanceHaversine(totalDistanceHaversine);
 
-        return telemetry;
-    }
-
-    private double applyKalmanFilter(double measurement, double speed, double gpsAccuracy, KalmanFilter filter) {
-        return filter.update(measurement, speed, gpsAccuracy);
+        return telemetryRepository.save(telemetry);
     }
 
     @Transactional(readOnly = true)
@@ -136,5 +151,21 @@ public class TelemetryService {
     @Transactional(readOnly = true)
     public List<Telemetry> getTelemetryHistory(Long droneId, LocalDateTime start, LocalDateTime end) {
         return telemetryRepository.findByDroneIdAndLocalDateTimeBetweenOrderByLocalDateTimeAsc(droneId, start, end);
+    }
+
+    @Transactional
+    public Telemetry saveRawTelemetry(TelemetryDto dto) {
+        Drone drone = droneRepository.findById(dto.getDroneId())
+                .orElseThrow(() -> new RuntimeException("Drone not found"));
+
+        Telemetry telemetry = new Telemetry();
+        telemetry.setDrone(drone);
+        telemetry.setLatitude(dto.getLatitude());
+        telemetry.setLongitude(dto.getLongitude());
+        telemetry.setAltitude(dto.getAltitude());
+        telemetry.setSpeed(dto.getSpeed());
+        telemetry.setLocalDateTime(LocalDateTime.now());
+
+        return telemetryRepository.save(telemetry);
     }
 }

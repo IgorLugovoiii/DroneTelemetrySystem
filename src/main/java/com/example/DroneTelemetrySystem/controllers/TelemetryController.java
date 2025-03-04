@@ -55,4 +55,9 @@ public class TelemetryController {
         List<Telemetry> telemetryList = telemetryService.getTelemetryHistory(droneId, startDate, endDate);
         return ResponseEntity.ok(telemetryList);
     }
+    @PostMapping("/raw")
+    public ResponseEntity<Telemetry> saveRaw(@RequestBody TelemetryDto dto) {
+        Telemetry telemetry = telemetryService.saveRawTelemetry(dto);
+        return ResponseEntity.ok(telemetry);
+    }
 }

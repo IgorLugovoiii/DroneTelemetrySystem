@@ -1,5 +1,6 @@
 package com.example.DroneTelemetrySystem.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,5 +17,6 @@ public class Drone {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
     @OneToMany(mappedBy = "drone", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Telemetry> telemetryList;
 }

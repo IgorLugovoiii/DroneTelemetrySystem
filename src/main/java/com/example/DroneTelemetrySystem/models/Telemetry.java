@@ -1,5 +1,6 @@
 package com.example.DroneTelemetrySystem.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,5 +32,6 @@ public class Telemetry {
     private double totalDistanceHaversine;
     @ManyToOne
     @JoinColumn(name = "drone_id", nullable = false)
+    @JsonBackReference
     private Drone drone;
 }
