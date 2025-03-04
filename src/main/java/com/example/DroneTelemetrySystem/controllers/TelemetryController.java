@@ -1,24 +1,32 @@
 package com.example.DroneTelemetrySystem.controllers;
 
 import com.example.DroneTelemetrySystem.dtos.TelemetryDto;
+import com.example.DroneTelemetrySystem.models.RawTelemetry;
 import com.example.DroneTelemetrySystem.models.Telemetry;
+import com.example.DroneTelemetrySystem.repositories.RawTelemetryRepository;
 import com.example.DroneTelemetrySystem.services.TelemetryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/telemetry")
 public class TelemetryController {
     private final TelemetryService telemetryService;
+    private final RawTelemetryRepository rawTelemetryRepository;
 
     @Autowired
-    public TelemetryController(TelemetryService telemetryService) {
+    public TelemetryController(TelemetryService telemetryService, RawTelemetryRepository rawTelemetryRepository) {
         this.telemetryService = telemetryService;
+        this.rawTelemetryRepository = rawTelemetryRepository;
+    }
+
+    @PostMapping("/saveRawTelemetry")
+    public ResponseEntity<RawTelemetry> saveRawTelemetry(@RequestBody TelemetryDto telemetryDto) {
+        return new ResponseEntity<>(telemetryService.saveRawTelemetry(telemetryDto), HttpStatus.CREATED);
     }
 
     @PostMapping("/kalman")
@@ -39,25 +47,13 @@ public class TelemetryController {
         return new ResponseEntity<>(telemetry, HttpStatus.CREATED);
     }
 
-    @GetMapping("/last/{droneId}")
-    public ResponseEntity<List<Telemetry>> getLastTelemetry(@PathVariable Long droneId) {
-        List<Telemetry> telemetryList = telemetryService.getLastTelemetry(droneId);
-        return ResponseEntity.ok(telemetryList);
+    @GetMapping("/raw/{droneId}")
+    public ResponseEntity<List<RawTelemetry>> getRawTelemetry(@PathVariable Long droneId) {
+        return new ResponseEntity<>(rawTelemetryRepository.findByDroneId(droneId), HttpStatus.OK);
     }
 
-    @GetMapping("/history/{droneId}")
-    public ResponseEntity<List<Telemetry>> getTelemetryHistory(
-            @PathVariable Long droneId,
-            @RequestParam("start") String start,
-            @RequestParam("end") String end) {
-        LocalDateTime startDate = LocalDateTime.parse(start);
-        LocalDateTime endDate = LocalDateTime.parse(end);
-        List<Telemetry> telemetryList = telemetryService.getTelemetryHistory(droneId, startDate, endDate);
-        return ResponseEntity.ok(telemetryList);
-    }
-    @PostMapping("/raw")
-    public ResponseEntity<Telemetry> saveRaw(@RequestBody TelemetryDto dto) {
-        Telemetry telemetry = telemetryService.saveRawTelemetry(dto);
-        return ResponseEntity.ok(telemetry);
+    @GetMapping("/processed/{droneId}")
+    public ResponseEntity<List<Telemetry>> getProcessedTelemetry(@PathVariable Long droneId) {
+        return new ResponseEntity<>(telemetryService.getProcessedTelemetry(droneId), HttpStatus.OK);
     }
 }

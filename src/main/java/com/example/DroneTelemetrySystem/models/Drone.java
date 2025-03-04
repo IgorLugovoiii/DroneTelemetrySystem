@@ -19,4 +19,7 @@ public class Drone {
     @OneToMany(mappedBy = "drone", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Telemetry> telemetryList;
+    @OneToMany(mappedBy = "drone", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<RawTelemetry> rawTelemetryList;
 }

@@ -4,8 +4,10 @@ import com.example.DroneTelemetrySystem.dtos.TelemetryDto;
 import com.example.DroneTelemetrySystem.filters.DistanceCalculator;
 import com.example.DroneTelemetrySystem.filters.KalmanFilter;
 import com.example.DroneTelemetrySystem.models.Drone;
+import com.example.DroneTelemetrySystem.models.RawTelemetry;
 import com.example.DroneTelemetrySystem.models.Telemetry;
 import com.example.DroneTelemetrySystem.repositories.DroneRepository;
+import com.example.DroneTelemetrySystem.repositories.RawTelemetryRepository;
 import com.example.DroneTelemetrySystem.repositories.TelemetryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +22,69 @@ public class TelemetryService {
     private final TelemetryRepository telemetryRepository;
     private final DistanceCalculator distanceCalculator;
     private final DroneRepository droneRepository;
+    private final RawTelemetryRepository rawTelemetryRepository;
 
     @Autowired
     public TelemetryService(TelemetryRepository telemetryRepository, DistanceCalculator distanceCalculator,
-                            DroneRepository droneRepository) {
+                            DroneRepository droneRepository, RawTelemetryRepository rawTelemetryRepository) {
         this.telemetryRepository = telemetryRepository;
         this.distanceCalculator = distanceCalculator;
         this.droneRepository = droneRepository;
+        this.rawTelemetryRepository = rawTelemetryRepository;
+    }
+
+    @Transactional
+    public RawTelemetry saveRawTelemetry(TelemetryDto dto) {
+        Drone drone = droneRepository.findById(dto.getDroneId())
+                .orElseThrow(() -> new RuntimeException("Drone not found"));
+
+        double altitudeChange = 0.0;
+        double totalDistance = 0.0;
+        double totalDistanceHaversine = 0.0;
+
+        List<RawTelemetry> lastRawTelemetry = rawTelemetryRepository.findTop1ByDroneIdOrderByLocalDateTimeDesc(dto.getDroneId());
+
+        if (!lastRawTelemetry.isEmpty()) {
+            RawTelemetry previousRaw = lastRawTelemetry.getFirst();
+            altitudeChange = dto.getAltitude() - previousRaw.getAltitude();
+
+            double distance = distanceCalculator.calculateHaversineDistance(
+                    previousRaw.getLatitude(), previousRaw.getLongitude(),
+                    dto.getLatitude(), dto.getLongitude());
+
+            totalDistanceHaversine = previousRaw.getTotalDistance() + distance;
+        }
+
+        RawTelemetry rawTelemetry = new RawTelemetry();
+        rawTelemetry.setDrone(drone);
+        rawTelemetry.setLatitude(dto.getLatitude());
+        rawTelemetry.setLongitude(dto.getLongitude());
+        rawTelemetry.setAltitude(dto.getAltitude());
+        rawTelemetry.setSpeed(dto.getSpeed());
+        rawTelemetry.setGpsAccuracy(dto.getGpsAccuracy());
+        rawTelemetry.setLocalDateTime(LocalDateTime.now());
+        rawTelemetry.setAltitudeChange(altitudeChange);
+        rawTelemetry.setTotalDistance(totalDistance);
+        rawTelemetry.setTotalDistanceHaversine(totalDistanceHaversine);
+
+        return rawTelemetryRepository.save(rawTelemetry);
+    }
+
+
+    private Telemetry createTelemetry(TelemetryDto dto, Drone drone, double latitude, double longitude, double totalDistance,
+                                      double totalDistanceHaversine, double altitudeChange) {
+        Telemetry telemetry = new Telemetry();
+        telemetry.setDrone(drone);
+        telemetry.setLatitude(latitude);
+        telemetry.setLongitude(longitude);
+        telemetry.setAltitude(dto.getAltitude());
+        telemetry.setSpeed(dto.getSpeed());
+        telemetry.setLocalDateTime(LocalDateTime.now());
+        telemetry.setAltitudeChange(altitudeChange);
+        telemetry.setTotalDistance(totalDistance);
+        telemetry.setTotalDistanceHaversine(totalDistanceHaversine);
+
+        return telemetryRepository.save(telemetry);
     }
 
     @Transactional
@@ -127,45 +185,9 @@ public class TelemetryService {
         return createTelemetry(dto, drone, filteredLat, filteredLon, totalDistance, 0.0, altitudeChange);
     }
 
-    private Telemetry createTelemetry(TelemetryDto dto, Drone drone, double latitude, double longitude, double totalDistance,
-                                      double totalDistanceHaversine, double altitudeChange) {
-        Telemetry telemetry = new Telemetry();
-        telemetry.setDrone(drone);
-        telemetry.setLatitude(latitude);
-        telemetry.setLongitude(longitude);
-        telemetry.setAltitude(dto.getAltitude());
-        telemetry.setSpeed(dto.getSpeed());
-        telemetry.setLocalDateTime(LocalDateTime.now());
-        telemetry.setAltitudeChange(altitudeChange);
-        telemetry.setTotalDistance(totalDistance);
-        telemetry.setTotalDistanceHaversine(totalDistanceHaversine);
-
-        return telemetryRepository.save(telemetry);
-    }
-
     @Transactional(readOnly = true)
-    public List<Telemetry> getLastTelemetry(Long droneId) {
+    public List<Telemetry> getProcessedTelemetry(Long droneId) {
         return telemetryRepository.findTop50ByDroneIdOrderByLocalDateTimeDesc(droneId);
     }
 
-    @Transactional(readOnly = true)
-    public List<Telemetry> getTelemetryHistory(Long droneId, LocalDateTime start, LocalDateTime end) {
-        return telemetryRepository.findByDroneIdAndLocalDateTimeBetweenOrderByLocalDateTimeAsc(droneId, start, end);
-    }
-
-    @Transactional
-    public Telemetry saveRawTelemetry(TelemetryDto dto) {
-        Drone drone = droneRepository.findById(dto.getDroneId())
-                .orElseThrow(() -> new RuntimeException("Drone not found"));
-
-        Telemetry telemetry = new Telemetry();
-        telemetry.setDrone(drone);
-        telemetry.setLatitude(dto.getLatitude());
-        telemetry.setLongitude(dto.getLongitude());
-        telemetry.setAltitude(dto.getAltitude());
-        telemetry.setSpeed(dto.getSpeed());
-        telemetry.setLocalDateTime(LocalDateTime.now());
-
-        return telemetryRepository.save(telemetry);
-    }
 }

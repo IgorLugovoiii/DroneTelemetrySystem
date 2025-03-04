@@ -7,10 +7,10 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Entity
 @Data
-@Table(name = "telemetry")
-public class Telemetry {
+@Entity
+@Table(name = "raw_telemetry")
+public class RawTelemetry {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,6 +30,9 @@ public class Telemetry {
 
     @Column(name = "speed")
     private double speed;
+
+    @Column(name = "gps_accuracy")
+    private double gpsAccuracy;
 
     @Column(name = "local_date_time")
     private LocalDateTime localDateTime;
