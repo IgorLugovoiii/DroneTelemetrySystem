@@ -2,7 +2,8 @@ global:
   scrape_interval: 5s  # Як часто опитувати сервіси
 
 scrape_configs:
-  - job_name: 'spring-boot-app'
+  - job_name: 'drone-telemetry-system'
     metrics_path: '/actuator/prometheus'
     static_configs:
       - targets: ['host.docker.internal:8080']
+
