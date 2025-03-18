@@ -1,0 +1,384 @@
+2025-03-12T00:06:18.938+02:00  INFO 13000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T00:06:18.950+02:00  INFO 13000 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T00:07:34.906+02:00  INFO 22168 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 22168 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T00:07:34.907+02:00 DEBUG 22168 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T00:07:34.909+02:00  INFO 22168 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T00:07:37.280+02:00  INFO 22168 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T00:07:37.280+02:00  INFO 22168 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T00:07:37.355+02:00  INFO 22168 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T00:07:38.138+02:00  INFO 22168 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T00:07:38.366+02:00  INFO 22168 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@315b5913
+2025-03-12T00:07:38.368+02:00  INFO 22168 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T00:07:38.393+02:00  INFO 22168 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T00:07:38.433+02:00  INFO 22168 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.017s)
+2025-03-12T00:07:38.433+02:00  WARN 22168 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T00:07:38.490+02:00  INFO 22168 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T00:07:38.493+02:00  INFO 22168 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T00:07:38.656+02:00  INFO 22168 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T00:07:38.734+02:00  INFO 22168 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T00:07:38.770+02:00  INFO 22168 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T00:07:39.098+02:00  INFO 22168 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T00:07:39.982+02:00  INFO 22168 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T00:07:41.813+02:00  INFO 22168 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 7.576 seconds (process running for 8.05)
+2025-03-12T00:09:38.382+02:00  INFO 22168 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T00:09:38.386+02:00  INFO 22168 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T00:09:42.898+02:00  INFO 23444 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 23444 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T00:09:42.900+02:00 DEBUG 23444 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T00:09:42.900+02:00  INFO 23444 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T00:09:45.407+02:00  INFO 23444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T00:09:45.407+02:00  INFO 23444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T00:09:45.490+02:00  INFO 23444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T00:09:46.204+02:00  INFO 23444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T00:09:46.413+02:00  INFO 23444 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@315b5913
+2025-03-12T00:09:46.415+02:00  INFO 23444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T00:09:46.446+02:00  INFO 23444 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T00:09:46.494+02:00  INFO 23444 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.022s)
+2025-03-12T00:09:46.494+02:00  WARN 23444 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T00:09:46.552+02:00  INFO 23444 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T00:09:46.556+02:00  INFO 23444 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T00:09:46.762+02:00  INFO 23444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T00:09:46.837+02:00  INFO 23444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T00:09:46.872+02:00  INFO 23444 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T00:09:47.182+02:00  INFO 23444 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T00:09:48.061+02:00  INFO 23444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T00:09:50.154+02:00  INFO 23444 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 7.945 seconds (process running for 8.456)
+2025-03-12T00:10:21.774+02:00  INFO 23444 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T00:26:21.747+02:00  INFO 23444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T00:26:21.751+02:00  INFO 23444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T00:26:40.426+02:00  INFO 7624 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 7624 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T00:26:40.428+02:00 DEBUG 7624 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T00:26:40.429+02:00  INFO 7624 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T00:26:42.853+02:00  INFO 7624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T00:26:42.854+02:00  INFO 7624 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T00:26:42.946+02:00  INFO 7624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T00:26:43.644+02:00  INFO 7624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T00:26:43.939+02:00  INFO 7624 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a2bb026
+2025-03-12T00:26:43.940+02:00  INFO 7624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T00:26:43.966+02:00  INFO 7624 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T00:26:44.010+02:00  INFO 7624 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.019s)
+2025-03-12T00:26:44.010+02:00  WARN 7624 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T00:26:44.068+02:00  INFO 7624 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T00:26:44.072+02:00  INFO 7624 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T00:26:44.185+02:00  INFO 7624 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T00:26:44.246+02:00  INFO 7624 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T00:26:44.318+02:00  INFO 7624 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T00:26:44.671+02:00  INFO 7624 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T00:26:45.550+02:00  INFO 7624 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T00:26:47.789+02:00  INFO 7624 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 8.008 seconds (process running for 8.49)
+2025-03-12T00:33:39.396+02:00  INFO 7624 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T00:39:01.652+02:00  INFO 7624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T00:39:01.656+02:00  INFO 7624 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T10:47:06.370+02:00  INFO 6260 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 6260 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T10:47:06.370+02:00 DEBUG 6260 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T10:47:06.378+02:00  INFO 6260 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T10:47:09.510+02:00  INFO 6260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T10:47:09.510+02:00  INFO 6260 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T10:47:09.655+02:00  INFO 6260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T10:47:10.487+02:00  INFO 6260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T10:47:10.787+02:00  INFO 6260 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@756c67cd
+2025-03-12T10:47:10.787+02:00  INFO 6260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T10:47:10.827+02:00  INFO 6260 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T10:47:10.899+02:00  INFO 6260 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.032s)
+2025-03-12T10:47:10.899+02:00  WARN 6260 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T10:47:10.965+02:00  INFO 6260 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T10:47:10.974+02:00  INFO 6260 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T10:47:11.165+02:00  INFO 6260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T10:47:11.267+02:00  INFO 6260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T10:47:11.319+02:00  INFO 6260 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T10:47:11.778+02:00  INFO 6260 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T10:47:12.881+02:00  INFO 6260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T10:47:14.935+02:00  INFO 6260 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 9.514 seconds (process running for 10.389)
+2025-03-12T10:47:15.000+02:00  INFO 6260 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T11:02:52.919+02:00  INFO 6260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:02:52.924+02:00  INFO 6260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:08:09.763+02:00  INFO 18364 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 18364 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:08:09.771+02:00 DEBUG 18364 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:08:09.771+02:00  INFO 18364 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:08:12.167+02:00  INFO 18364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:08:12.167+02:00  INFO 18364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:08:12.241+02:00  INFO 18364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:08:12.947+02:00  INFO 18364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:08:13.185+02:00  INFO 18364 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b0ed98a
+2025-03-12T11:08:13.185+02:00  INFO 18364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:08:13.217+02:00  INFO 18364 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:08:13.258+02:00  INFO 18364 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.019s)
+2025-03-12T11:08:13.258+02:00  WARN 18364 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:08:13.340+02:00  INFO 18364 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:08:13.348+02:00  INFO 18364 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:08:13.515+02:00  INFO 18364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:08:13.564+02:00  INFO 18364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:08:13.597+02:00  INFO 18364 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:08:13.935+02:00  INFO 18364 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:08:14.875+02:00  INFO 18364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:08:17.098+02:00  INFO 18364 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 7.922 seconds (process running for 12.682)
+2025-03-12T11:10:44.948+02:00  INFO 18364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:10:44.948+02:00  INFO 18364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:10:47.171+02:00  INFO 11468 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 11468 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:10:47.171+02:00 DEBUG 11468 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:10:47.171+02:00  INFO 11468 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:10:49.779+02:00  INFO 11468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:10:49.779+02:00  INFO 11468 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:10:49.886+02:00  INFO 11468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:10:50.689+02:00  INFO 11468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:10:50.997+02:00  INFO 11468 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b343b6d
+2025-03-12T11:10:51.000+02:00  INFO 11468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:10:51.041+02:00  INFO 11468 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:10:51.135+02:00  INFO 11468 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.049s)
+2025-03-12T11:10:51.136+02:00  WARN 11468 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:10:51.221+02:00  INFO 11468 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:10:51.235+02:00  INFO 11468 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:10:51.450+02:00  INFO 11468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:10:51.524+02:00  INFO 11468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:10:51.558+02:00  INFO 11468 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:10:51.973+02:00  INFO 11468 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:10:53.001+02:00  INFO 11468 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:10:55.157+02:00  INFO 11468 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 8.72 seconds (process running for 9.279)
+2025-03-12T11:15:21.979+02:00  INFO 11468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T11:18:39.745+02:00  INFO 11468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:18:39.753+02:00  INFO 11468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:18:41.918+02:00  INFO 13068 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 13068 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:18:41.918+02:00 DEBUG 13068 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:18:41.918+02:00  INFO 13068 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:18:44.460+02:00  INFO 13068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:18:44.460+02:00  INFO 13068 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:18:44.539+02:00  INFO 13068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:18:45.344+02:00  INFO 13068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:18:45.659+02:00  INFO 13068 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a2bb026
+2025-03-12T11:18:45.659+02:00  INFO 13068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:18:45.690+02:00  INFO 13068 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:18:45.737+02:00  INFO 13068 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.020s)
+2025-03-12T11:18:45.737+02:00  WARN 13068 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:18:45.800+02:00  INFO 13068 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:18:45.800+02:00  INFO 13068 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:18:46.023+02:00  INFO 13068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:18:46.102+02:00  INFO 13068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:18:46.134+02:00  INFO 13068 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:18:46.479+02:00  INFO 13068 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:18:47.389+02:00  INFO 13068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:18:49.422+02:00  INFO 13068 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 8.232 seconds (process running for 8.738)
+2025-03-12T11:24:10.996+02:00  INFO 13068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:24:10.996+02:00  INFO 13068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:24:13.113+02:00  INFO 16392 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 16392 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:24:13.121+02:00 DEBUG 16392 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:24:13.121+02:00  INFO 16392 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:24:15.775+02:00  INFO 16392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:24:15.775+02:00  INFO 16392 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:24:15.870+02:00  INFO 16392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:24:16.647+02:00  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:24:16.988+02:00  INFO 16392 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@315b5913
+2025-03-12T11:24:16.988+02:00  INFO 16392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:24:17.022+02:00  INFO 16392 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:24:17.065+02:00  INFO 16392 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.021s)
+2025-03-12T11:24:17.065+02:00  WARN 16392 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:24:17.127+02:00  INFO 16392 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:24:17.131+02:00  INFO 16392 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:24:17.312+02:00  INFO 16392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:24:17.380+02:00  INFO 16392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:24:17.413+02:00  INFO 16392 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:24:17.731+02:00  INFO 16392 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:24:18.594+02:00  INFO 16392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:24:20.361+02:00  INFO 16392 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 7.919 seconds (process running for 8.44)
+2025-03-12T11:24:46.682+02:00  INFO 16392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:24:46.690+02:00  INFO 16392 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:24:55.194+02:00  INFO 8164 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 8164 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:24:55.196+02:00 DEBUG 8164 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:24:55.196+02:00  INFO 8164 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:24:58.175+02:00  INFO 8164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:24:58.175+02:00  INFO 8164 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:24:58.279+02:00  INFO 8164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:24:59.573+02:00  INFO 8164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:24:59.972+02:00  INFO 8164 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@39851c5
+2025-03-12T11:24:59.977+02:00  INFO 8164 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:25:00.020+02:00  INFO 8164 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:25:00.081+02:00  INFO 8164 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.027s)
+2025-03-12T11:25:00.081+02:00  WARN 8164 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:25:00.156+02:00  INFO 8164 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:25:00.172+02:00  INFO 8164 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:25:00.360+02:00  INFO 8164 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:25:00.425+02:00  INFO 8164 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:25:00.459+02:00  INFO 8164 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:25:00.831+02:00  INFO 8164 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:25:01.872+02:00  INFO 8164 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:25:04.330+02:00  INFO 8164 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 9.952 seconds (process running for 10.548)
+2025-03-12T11:25:26.631+02:00  INFO 8164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:25:26.631+02:00  INFO 8164 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:30:37.321+02:00  INFO 2760 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 2760 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:30:37.323+02:00 DEBUG 2760 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:30:37.323+02:00  INFO 2760 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:30:40.190+02:00  INFO 2760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:30:40.190+02:00  INFO 2760 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:30:40.287+02:00  INFO 2760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:30:41.264+02:00  INFO 2760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:30:41.614+02:00  INFO 2760 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7645e64
+2025-03-12T11:30:41.620+02:00  INFO 2760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:30:41.663+02:00  INFO 2760 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:30:41.712+02:00  INFO 2760 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.021s)
+2025-03-12T11:30:41.712+02:00  WARN 2760 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:30:41.782+02:00  INFO 2760 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:30:41.785+02:00  INFO 2760 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:30:41.956+02:00  INFO 2760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:30:42.104+02:00  INFO 2760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:30:42.169+02:00  INFO 2760 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:30:42.707+02:00  INFO 2760 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:30:43.696+02:00  INFO 2760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:30:45.705+02:00  INFO 2760 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 9.254 seconds (process running for 9.86)
+2025-03-12T11:33:59.259+02:00  INFO 2760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T11:35:44.452+02:00  INFO 2760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:35:44.460+02:00  INFO 2760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:37:05.537+02:00  INFO 2024 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 2024 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:37:05.539+02:00 DEBUG 2024 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:37:05.539+02:00  INFO 2024 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:37:08.407+02:00  INFO 2024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:37:08.408+02:00  INFO 2024 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:37:08.525+02:00  INFO 2024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:37:09.794+02:00  INFO 2024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:37:10.126+02:00  INFO 2024 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48ae9e8b
+2025-03-12T11:37:10.126+02:00  INFO 2024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:37:10.157+02:00  INFO 2024 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:37:10.220+02:00  INFO 2024 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.025s)
+2025-03-12T11:37:10.220+02:00  WARN 2024 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:37:10.299+02:00  INFO 2024 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:37:10.315+02:00  INFO 2024 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:37:10.490+02:00  INFO 2024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:37:10.544+02:00  INFO 2024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:37:10.576+02:00  INFO 2024 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:37:10.869+02:00  INFO 2024 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:37:11.811+02:00  INFO 2024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:37:13.785+02:00  INFO 2024 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 9.079 seconds (process running for 9.682)
+2025-03-12T11:41:55.025+02:00  INFO 2024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:41:55.025+02:00  INFO 2024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T11:41:57.137+02:00  INFO 15320 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 15320 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T11:41:57.137+02:00 DEBUG 15320 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T11:41:57.137+02:00  INFO 15320 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T11:41:59.728+02:00  INFO 15320 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T11:41:59.728+02:00  INFO 15320 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T11:41:59.812+02:00  INFO 15320 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T11:42:00.507+02:00  INFO 15320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T11:42:00.712+02:00  INFO 15320 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7de6549d
+2025-03-12T11:42:00.712+02:00  INFO 15320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T11:42:00.743+02:00  INFO 15320 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T11:42:00.783+02:00  INFO 15320 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.020s)
+2025-03-12T11:42:00.783+02:00  WARN 15320 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T11:42:00.843+02:00  INFO 15320 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T11:42:00.843+02:00  INFO 15320 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T11:42:00.988+02:00  INFO 15320 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T11:42:01.052+02:00  INFO 15320 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T11:42:01.084+02:00  INFO 15320 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T11:42:01.442+02:00  INFO 15320 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T11:42:02.751+02:00  INFO 15320 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T11:42:05.120+02:00  INFO 15320 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 8.664 seconds (process running for 9.126)
+2025-03-12T11:42:34.912+02:00  INFO 15320 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12T11:49:15.477+02:00  INFO 15320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12T11:49:15.489+02:00  INFO 15320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12T15:23:54.879+02:00  INFO 21548 --- [main] c.e.D.DroneTelemetrySystemApplication    : Starting DroneTelemetrySystemApplication using Java 21.0.5 with PID 21548 (D:\JavaProjects\DroneTelemetrySystem\target\classes started by i in D:\JavaProjects\DroneTelemetrySystem)
+2025-03-12T15:23:54.882+02:00 DEBUG 21548 --- [main] c.e.D.DroneTelemetrySystemApplication    : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-12T15:23:54.882+02:00  INFO 21548 --- [main] c.e.D.DroneTelemetrySystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-03-12T15:23:57.688+02:00  INFO 21548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12T15:23:57.688+02:00  INFO 21548 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12T15:23:57.784+02:00  INFO 21548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12T15:23:58.577+02:00  INFO 21548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12T15:23:58.915+02:00  INFO 21548 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f289728
+2025-03-12T15:23:58.915+02:00  INFO 21548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12T15:23:58.946+02:00  INFO 21548 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/droneTelemetrySystem (PostgreSQL 16.1)
+2025-03-12T15:23:58.994+02:00  INFO 21548 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.024s)
+2025-03-12T15:23:59.010+02:00  WARN 21548 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2025-03-12T15:23:59.073+02:00  INFO 21548 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2025-03-12T15:23:59.098+02:00  INFO 21548 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2025-03-12T15:23:59.273+02:00  INFO 21548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-12T15:23:59.368+02:00  INFO 21548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-12T15:23:59.400+02:00  INFO 21548 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-12T15:23:59.831+02:00  INFO 21548 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-12T15:24:00.851+02:00  INFO 21548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-12T15:24:02.993+02:00  INFO 21548 --- [main] c.e.D.DroneTelemetrySystemApplication    : Started DroneTelemetrySystemApplication in 8.855 seconds (process running for 9.587)
+2025-03-12T15:24:48.074+02:00  INFO 21548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
