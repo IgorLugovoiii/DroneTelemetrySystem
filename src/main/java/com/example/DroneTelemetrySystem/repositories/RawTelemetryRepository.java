@@ -10,4 +10,6 @@ import java.util.List;
 public interface RawTelemetryRepository extends JpaRepository<RawTelemetry, Long> {
     List<RawTelemetry> findTop1ByDroneIdOrderByLocalDateTimeDesc(Long droneId);
     List<RawTelemetry> findByDroneId(Long droneId);
+
+    List<RawTelemetry> findByDroneIdOrderByLocalDateTimeAsc(Long id);
 }

@@ -27,9 +27,10 @@ public class KalmanFilter {
 //    Швидкий політ або вітер q = 0.001
 //    Різкі маневри q = 0.01
     private double calculateProcessNoise(double speed) {
-        if (speed < 1) return 0.00001;
-        if (speed < 5) return 0.0001;
-        if (speed < 20) return 0.001;
+        if (speed < 1) return 0.000001;
+        if (speed < 5) return 0.00001;
+        if (speed < 20) return 0.0001;
+        if (speed < 50) return 0.001;
         return 0.01;
     }
 
@@ -38,9 +39,10 @@ public class KalmanFilter {
 //    Звичайний GPS (похибка ±3-5 м) r = 3.0 - 5.0
 //    Дешевий модуль або сильні перешкоди r = 10.0
     private double calculateMeasurementNoise(double gpsAccuracy) {
-        if (gpsAccuracy < 0.5) return 0.1;
-        if (gpsAccuracy < 5) return 3.0;
-        return 10.0;
+        if (gpsAccuracy < 0.2) return 0.01;
+        if (gpsAccuracy < 1) return 0.1;
+        if (gpsAccuracy < 5) return 1.0;
+        return 5.0;
     }
 
 }

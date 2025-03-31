@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/telemetry")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TelemetryController {
     private final TelemetryService telemetryService;
     private final RawTelemetryRepository rawTelemetryRepository;
@@ -55,5 +56,25 @@ public class TelemetryController {
     @GetMapping("/processed/{droneId}")
     public ResponseEntity<List<Telemetry>> getProcessedTelemetry(@PathVariable Long droneId) {
         return new ResponseEntity<>(telemetryService.getProcessedTelemetry(droneId), HttpStatus.OK);
+    }
+    @DeleteMapping("/clear/{droneId}")
+    public ResponseEntity<Void> clearProcessedTelemetry(@PathVariable Long droneId) {
+        telemetryService.deleteByDroneId(droneId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping("/processAll/kalman/{droneId}")
+    public ResponseEntity<List<Telemetry>> processAllWithKalman(@PathVariable Long droneId) {
+        return new ResponseEntity<>(telemetryService.processAllWithKalman(droneId), HttpStatus.OK);
+    }
+
+    @PostMapping("/processAll/haversine/{droneId}")
+    public ResponseEntity<List<Telemetry>> processAllWithHaversine(@PathVariable Long droneId) {
+        return new ResponseEntity<>(telemetryService.processAllWithHaversine(droneId), HttpStatus.OK);
+    }
+
+    @PostMapping("/processAll/kalman-haversine/{droneId}")
+    public ResponseEntity<List<Telemetry>> processAllWithKalmanAndHaversine(@PathVariable Long droneId) {
+        return new ResponseEntity<>(telemetryService.processAllWithKalmanAndHaversine(droneId), HttpStatus.OK);
     }
 }
